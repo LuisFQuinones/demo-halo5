@@ -1,0 +1,669 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    background-color: black;
+}
+
+.show {
+    display: flex !important;
+}
+
+/*
+    Navbar
+*/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li>a {
+    display: block;
+    position: relative;
+    padding: 20px 15px 10px 15px;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li .link::before {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    background-color: white;
+}
+
+nav ul li .link:hover::before {
+    transform: scaleX(1);
+}
+
+nav .more {
+    display: none;
+}
+
+nav .menu {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    min-width: 200px;
+    margin-top: 50px;
+    background-color: white;
+}
+
+nav .menu a {
+    padding: 10px 15px;
+    color: black;
+    text-decoration: none;
+}
+
+nav .menu a:hover {
+    background-color: #f1f1f1;
+}
+
+nav .mobile {
+    display: none;
+    width: 100%;
+}
+
+nav .mobile .header {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+nav .mobile .header a {
+    display: inline-flex;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+
+nav .mobile .header #bmenu {
+    border: none;
+    background-color: black;
+    color: white;
+}
+
+nav .mobile .links {
+    display: none;
+    flex-direction: column;
+    position: relative;
+    z-index: 200;
+    background-color: black;
+}
+
+nav .mobile .links a {
+    font-size: 20px;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+}
+
+nav .mobile .links a:hover {
+    color: black;
+    background-color: white;
+}
+
+/*
+    Header
+*/
+
+header {
+    background-image: url('../imgs/halo-infinite-cover-darkmode.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 125vh;
+    mask-image: linear-gradient(black 80%, transparent);
+}
+
+/*
+    Banner
+*/
+
+h2 {
+    font-size: 3.3rem;
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    width: 100%;
+    height: 50px;
+    transform: scale(0.4) skewY(-20deg) rotate(20deg);
+    background-color: #00ff00c5;
+}
+
+.pbanner {
+    font-size: 0.6em;
+}
+
+.pbanner:nth-child(3) {
+    font-weight: bold;
+    font-size: 0.7em;
+}
+
+#banner {
+    font-size: 1.8em;
+    text-align: center;
+    padding: 10px;
+    width: 500px;
+    position: absolute;
+    z-index: 100;
+    top: 35%;
+    right: 6%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.green-button {
+    border: 0;
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    padding: 10px 15px;
+    background-color: #00ff00c5;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.green-button:hover {
+    background-color: #00cc00af;
+}
+
+.green-link {
+    border: 0;
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    font-size: 15px;
+    padding: 10px 15px;
+    color: #00ff00c5;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.green-link::before {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    background-color: #00ff00c5;
+}
+
+.green-link:hover::before {
+    transform: scaleX(1);
+}
+
+/*
+    Video
+*/
+
+.w-75 {
+    width: 75%;
+    margin: 0 auto;
+}
+
+h3 {
+    font-size: 1.5em;
+    padding-top: 50px;
+    color: white;
+}
+
+#videos {
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+    background-image: url('../imgs/bg-videos.png');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#videos #slider #controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#videos #slider #controls #prev,
+#videos #slider #controls #next {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(58, 58, 58);
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: all 0.3s;
+}
+
+#videos #slider #controls #prev:hover,
+#videos #slider #controls #next:hover {
+    background-color: rgb(78, 78, 78);
+}
+
+#videos #slider #current {
+    width: 1250px;
+    margin: 50px auto;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#videos #slider #videos-container {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    overflow: auto;
+    transition: all 0.5s;
+}
+
+#videos #slider #videos-container .item {
+    border: solid 1px white;
+    cursor: pointer;
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+#videos #slider #videos-container .item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+#videos #slider #videos-container .item:hover img {
+    transition: opacity 0.5s ease;
+    opacity: 0.6;
+}
+
+#videos #slider #videos-container .item a {
+    position: relative;
+}
+
+#videos #slider #videos-container .item a::before {
+    font-family: 'Material Symbols Outlined';
+    font-size: 55px;
+    content: 'play_circle';
+    position: absolute;
+    color: white;
+    display: flex;
+    left: 125px;
+    top: -100px;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#videos #slider #videos-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+#videos #slider #videos-container::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid rgb(58, 58, 58);
+}
+
+#videos #slider #videos-container::-webkit-scrollbar-track {
+    background-color: rgb(58, 58, 58);
+}
+
+/*
+    Campaign
+*/
+
+#campaign {
+    margin-top: 150px;
+    font-size: 1em;
+    text-align: center;
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+#campaign img {
+    width: 60%;
+    height: 700px;
+    object-fit: cover;
+    margin-right: 5%;
+    padding: 10px;
+    mask-image: linear-gradient(to right, black 95%, transparent);
+}
+
+#campaign div {
+    margin-top: 150px;
+    width: 100%;
+    text-align: left;
+}
+
+#campaign p {
+    font-size: 1.2em;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/*
+    Multiplayer
+*/
+
+#multiplayer {
+    font-size: 1em;
+    text-align: center;
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+#multiplayer img {
+    margin-top: 200px;
+    width: 60%;
+    height: 700px;
+    object-fit: cover;
+    mask-image: linear-gradient(to left, black 95%, transparent);
+}
+
+#multiplayer div {
+    margin-top: 300px;
+    margin-left: 100px;
+    width: 100%;
+    text-align: left;
+}
+
+#multiplayer p {
+    font-size: 1.2em;
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+/*
+    Serie
+*/
+
+#serie {
+    font-size: 1em;
+    text-align: center;
+    display: flex;
+    margin-top: 150px;
+    padding: 10px;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    background-image: url('../imgs/serie.jpg');
+    background-size: cover;
+    background-position: center center;
+    color: white;
+}
+
+#serie div {
+    margin-top: 200px;
+    width: 50%;
+    text-align: left;
+    margin-left: 65%;
+}
+
+#serie p {
+    font-size: 1.2em;
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+/*
+    get the game
+*/
+
+#game {
+    font-size: 1em;
+    text-align: center;
+    margin-top: 150px;
+    padding: 10px;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    width: 100%;
+}
+
+#game a{
+    color: black;
+    text-decoration: none;
+    background-color: #00ff00c5;
+}
+
+.item-store {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 50px;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    justify-content: space-between;
+}
+
+.item-store img {
+    width: 55%;
+    height: 650px;
+    object-fit: cover;
+}
+
+.info-product {
+    text-align: left;
+}
+
+/*
+    Footer
+*/
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-image: url('../imgs/master-chief-darkmode.jpg');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: 750px;
+    margin-top: 50%;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #00ff00c5;
+}
+
+/*
+   #Media Queries
+*/
+
+@media screen and (max-width: 1100px) {
+    nav .link-hide {
+        display: none;
+    }
+
+    nav .more {
+        display: flex;
+    }
+
+    #banner {
+        position: initial !important;
+        z-index: 100;
+        top: 0;
+        width: 100%;
+    }
+
+    #slider #current {
+        width: 90% !important;
+    }
+
+    #slider #current iframe {
+        height: 500px;
+    }
+
+    #campaign, #multiplayer {
+        margin-top: 30px;
+        z-index: 100;
+        top: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    #campaign img, #multiplayer img {
+        display: none;
+    }
+
+    #campaign div, #multiplayer div, #serie div {
+        margin-top: 0;
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    #campaign p, #multiplayer p, #serie p {
+        width: 100%;
+    }
+
+    #serie {
+        margin-top: 0;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .item-store {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .info-product {
+        text-align: center;
+    }
+
+    .item-store img {
+        width: auto;
+        max-width: 55%;
+        min-width: 50%;
+        height: auto;
+        max-height: 650px;
+        min-height: 500px;
+        object-fit: cover;
+    }
+
+    footer {
+        height: 500px;
+        margin-top: 150%;
+    }
+}
+
+@media screen and (max-width: 850px){
+    footer {
+        height: 400px;
+        margin-top: 180%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    nav {
+        width: 100%;
+        padding: 0;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav .mobile {
+        display: block;
+    }
+
+    header {
+        background-position: 50% 30%;
+        height: 30vh;
+    }
+
+    #banner {
+        position: initial !important;
+        z-index: 100;
+        top: 0;
+        width: 100%;
+    }
+
+    #slider #current {
+        width: 80% !important;
+    }
+
+    #slider #current iframe {
+        height: 300px;
+    }
+
+    #slider #videos-container {
+        display: none !important;
+    }
+
+    footer {
+        height: 300px;
+        margin-top: 250%;
+    }
+}
