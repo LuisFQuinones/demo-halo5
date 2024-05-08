@@ -1,0 +1,2 @@
+Lo siguiente es una demostración de la página web de Halo Infinite, la cual fue realizada con HTML, CSS y JavaScript.
+Con ayuda de Vida MRR - Programacion web, se logró realizar una página web con un diseño similar al de la página oficial de Halo Infinite.
